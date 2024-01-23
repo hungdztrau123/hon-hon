@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     
     path('products', ProductList.as_view()),
-    path('products/<int:product_id>', ProductUpdate.as_view()),
+    path('products/<int:pk>', ProductUpdate.as_view()),
     path('demo', DemoView.as_view()),
     path('color', ColorList.as_view()),
     path('color/<int:pk>', ColorUpdate.as_view()),

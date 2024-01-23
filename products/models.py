@@ -56,10 +56,10 @@ class SizeType_Choices(models.TextChoices):
     Small = 'Small'
 
 class Product(models.Model):
-    product_code = models.AutoField(primary_key=True)
+   
     category = models.ForeignKey(Category, on_delete=models.CASCADE, choices = Category_Choices)
     product_name = models.CharField(max_length=100,blank=True, null = True)
-    image = models.ImageField(upload_to='images/',blank=True, null = True)
+    image = models.FileField(upload_to='images/',blank=True, null = True)
     price = models.CharField(max_length=20,blank=True, null = True)
     description = models.TextField(blank=True, null = True)
     stock = models.IntegerField(default=100)
@@ -74,3 +74,8 @@ class Product(models.Model):
 class ProductImages(models.Model):
      product = models.ForeignKey(Product, on_delete=models.PROTECT)
      image = models.ImageField(upload_to='images/')
+
+
+
+
+
